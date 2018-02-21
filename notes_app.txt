@@ -1,0 +1,7 @@
+cmd params for XenClient.exe
+
+	param 	desc				example					notes
+	
+	-i		master server ip	-i 127.0.0.1			the master server is used to send the list of game servers to the client
+	-t		session token		-t ajwtuho210vyad35		received from the login server and passed on to the master server
+	-u		store ip			-u www.facebook.com		displayed in an html window when the client loads the store

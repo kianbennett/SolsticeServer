@@ -1,0 +1,50 @@
+Upon connecting sends initial packet of length 44, its contents are the same every time and are not affected by character data.
+
+Before encryption: { 2A 0 BF 0 0 0 0 0 11 1 0 3 0 B5 1 C 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 44 45 53 54 52 4F 59 45 52 }
+After encryption:  { DD 92 61 29 F7 E1 59 1F 76 C2 B 98 AB EA 14 26 57 1 2F 7C AC 2 5E F8 58 5 BC F1 B3 A 78 E0 67 15 E2 4B 45 8C 48 21 1 E7 4A AF }
+
+
+Sending player data to the client (packet length 183):
+	byte 0: 181 	(length)
+	byte 1: 0
+	byte 2: 192 	(id)
+	byte 3-7: ?
+	byte 8: 0
+	byte 9-183: 	174 bytes of player data
+		15: level
+		
+	
+
+
+Packet options:
+
+[2] = 191	[0] = 13		? (fades to black)
+[2] = 192					stuff about items/inventory/stats
+	[8] = 0					set player stats
+[2] = 186					?
+[2] = 193					trading stuff
+[2] = 194
+[2] = 195
+[2] = 196					guild stuff
+[2] = 198	[8,9] = 17		starts pin game 		{ 8 0 198 0 0 0 0 0 17 17 }
+
+[2] = 178
+[2] = 179
+[2] = 180
+[2] = 181
+
+[2] = 177					?
+
+[2] = 176
+	[8] = 17 & [0] = 15		?
+	[8] = 19 & [0] = 7		loads UI
+	[8] = 18 & [0] = 7		enabled map loading
+	[8] = 20 & [0] = 27		closes socket
+	[8] = 21 & [0] = 7		?
+	[8] = 22 & [0] = 7		loads browser window
+	[8] = 48				?
+	[8] = 24				?
+	
+[2] = 2						closing socket stuff
+[2] = 1						
+[2] = 0						closes socket

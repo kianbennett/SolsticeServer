@@ -1,0 +1,99 @@
+Start the game with XenClient -i ip_address -t token
+First packet sent to the master server (port 1818):
+	byte 1: length of bytes 3 onwards
+	byte 2: 0
+	byte 3: 208
+	byte 4: length of token
+	byte 5+: token
+	
+The response packet sent from the server decides whether the client can continue
+	byte 1: length of bytes 3 onwards
+	byte 2: 0
+	byte 3: 208
+	byte 4: error code (displays notice in client)
+				0 - OK
+				1 - This ID is not registered
+				2 - Password does not match
+				3 - Previous connection detected
+				4 - Unknown error
+				5 - Checking server
+				6 - Access of this user is limited
+			
+If an error is received, the client will keep sending the packet { 1 0 5 } at regular intervals
+
+After receiving the response, the client will send { 1 0 209 }. This same packet should be returned to the client.
+
+If successful, the server list should appear on the client and be waiting the server list from the master server
+	byte 1: number of servers
+    byte 2: ???
+    byte 3-15: server 1 name
+    byte 16-22: server ip
+    byte 23 onwards repeats the pattern of 3-22
+	
+Connecting to the "realm" server sends a server at the ip specified by the master server on port 1819:
+	{ 37 0 211 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+The zeros can be set by the master server with the 208 packet
+	
+The response packet tells the client whether they are ok to log in to the realm
+	byte 1: 2
+	byte 2: 0
+	byte 3: 211
+	byte 4: error code
+				0 - OK
+				1 - You have logged in already
+				2 - This information does not exist
+				3 - Unknown error
+				4 - Failed to log-in
+				
+If ok the client will send { 21 0 212 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+Server response: 
+	{ 2 0 215 0 } or { 2 0 216 0 } - game will close
+	{ 2 0 216 0 } or { 2 0 215 1 } - "Logged in from other computer so closing the current connection"
+	{ 2 0 213 0 } - "Same character ID is already in use"
+	{ 2 0 213 1 } - "You cannot create more than 3 characters"
+	{ 2 0 213 2+ } - Continue to character creation
+	{ 2 0 214 1 } - Continue to character creation
+	{ 2 0 214 2 } - "You have joined the guild already. Please withdraw from your guild before deleting."
+	
+Character packet from character creation screen (client->server)
+	byte 1: 44 (length)
+	byte 2: 0
+	byte 3: 213
+	byte 4: character id (1-6)
+	bytes 5-17: character name
+	byte 18: level
+	byte 19-22: world server IP
+	byte 23: power
+	byte 24: stamina
+	byte 25: agility
+	byte 26: intelligence
+	byte 27: mentality
+	byte 28: wisdom
+	byte 29: sex (128 = male, 0 = female)
+	byte 30: ???
+	byte 31: costume body
+	byte 32: hair (10 * style + 1 * colour) e.g. style 1 colour 2 would be 12. There are 3 styles and 3 colours 
+	byte 33: costume head
+	byte 34: costume face
+	byte 35, 36: ???
+	byte 37: costume eyes
+	byte 38: costume back
+	byte 39-46: ???
+	
+note: possible missing data - map position, equipped items, pets etc
+	
+trivia: The client will only let you use a 12 character name, but there is space in the packet for 13 characters
+	
+Send character list to player (server->client)
+	byte 1: length (must be equal to 43 * num chars + 6)
+	byte 2: 0
+	byte 3: 212
+	byte 4-7: messenger ip
+	byte 8: number of characters
+	byte 9+: repeat the 43 byte of the character packet above for each character
+	
+example:
+	{ 49 0 212 0 0 0 0 1 0 85 103 32 84 104 101 32 66 114 97 118 101 0 0 0 0 0 0 0 0 0 0 0 0 128 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 }
+	
+When selecting the character and loading into the game, the client sends { 1 0 215 } to the server. 
+When it receives this same byte back it disconnects from the SVC server and connects to a server specified in the character packet on port 18123

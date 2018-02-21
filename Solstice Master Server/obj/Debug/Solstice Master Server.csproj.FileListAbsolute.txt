@@ -1,0 +1,16 @@
+C:\Users\Kian\Documents\Visual Studio 2017\Projects\Solstice Master Server\obj\Debug\Solstice Master Server.csprojResolveAssemblyReference.cache
+C:\Users\Kian\Documents\Visual Studio 2017\Projects\Solstice Master Server\obj\Debug\Solstice Master Server.csproj.CoreCompileInputs.cache
+C:\Users\Kian\Documents\Visual Studio 2017\Projects\Solstice Master Server\bin\Debug\MasterServer.exe.config
+C:\Users\Kian\Documents\Visual Studio 2017\Projects\Solstice Master Server\bin\Debug\MasterServer.exe
+C:\Users\Kian\Documents\Visual Studio 2017\Projects\Solstice Master Server\bin\Debug\MasterServer.pdb
+C:\Users\Kian\Documents\Visual Studio 2017\Projects\Solstice Master Server\obj\Debug\MasterServer.exe
+C:\Users\Kian\Documents\Visual Studio 2017\Projects\Solstice Master Server\obj\Debug\MasterServer.pdb
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\bin\MasterServer.exe.config
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\bin\MasterServer.exe
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\bin\MasterServer.pdb
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\Solstice Master Server\obj\Debug\Solstice Master Server.csprojResolveAssemblyReference.cache
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\Solstice Master Server\obj\Debug\Solstice Master Server.csproj.CoreCompileInputs.cache
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\Solstice Master Server\obj\Debug\MasterServer.exe
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\Solstice Master Server\obj\Debug\MasterServer.pdb
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\build\MasterServer.exe
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\build\MasterServer.pdb

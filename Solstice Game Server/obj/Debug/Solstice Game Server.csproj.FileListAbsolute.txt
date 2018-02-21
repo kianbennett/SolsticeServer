@@ -1,0 +1,14 @@
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\Solstice Game Server\bin\Debug\Server.exe.config
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\Solstice Game Server\bin\Debug\Server.exe
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\Solstice Game Server\bin\Debug\Server.pdb
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\Solstice Game Server\bin\Debug\Hjson.dll
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\Solstice Game Server\bin\Debug\Hjson.xml
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\Solstice Game Server\obj\Debug\Solstice Game Server.csprojResolveAssemblyReference.cache
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\Solstice Game Server\obj\Debug\Solstice Game Server.csproj.CoreCompileInputs.cache
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\build\Server.exe.config
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\build\Server.exe
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\build\Server.pdb
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\build\game-server\SolsticeServer.exe
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\build\game-server\SolsticeServer.pdb
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\Solstice Game Server\obj\Debug\SolsticeServer.exe
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\Solstice Game Server\obj\Debug\SolsticeServer.pdb
