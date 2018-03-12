@@ -1,0 +1,317 @@
+List of map ids (found in GBKRS.DRA)
+
+	id 		name					connects to															Transporter
+	
+	0       -
+    63      Empion Forest			Ivolgue Forest, Morpheus Forest
+    64      Morpheus Forest			Empion Forest, Edine Plains
+    65      Edine Plains			Morpheus Forest, Blackmail Forest, Daniella Plains
+    66      Daniella Plains			Edine Plains, Buisness Plains
+    67      Buisiness Plains		Daniella Plains, Goofball Plains
+    68      Goofball Plains			Buisiness Plains, Presenal Plains
+    83      Mall Street				Safe Bar, Vader Hotel, City Hall, Brynhild Guild Center
+    84      Arcarinas Square																			90, 47
+    85      Summerhill Street
+    86      Guild Plaza
+    87      Tramis Mansion
+    88      Kramer Forest
+    89      Ivolgue Forest
+    90      Blackmail Forest
+    91      Inkwell Plains
+    92      Presenal Plains
+    109     Brunen Basin
+    110     Brynhild Trisects
+    111     Aerial Forest
+    112     Linear Forest
+    113     Oblique Forest
+    114     Loren Valley
+    115     ?
+    116     ?
+    117     Shudbee Forest
+    118     Pindown Valley
+    119     Sennin Valley
+    120     Velcro Forest
+    121     Clique Forest
+    122     Amelia Forest
+    135     Waimea Gorge
+    137     Loem Valley
+    141     ?
+    142     Nordis Valley
+    143     Sheryle Forest
+    144     Simpson Valley
+    146     Jotunheim																					148, 139
+    147     ?
+    161     Death Valley
+    162     Routuer Valley
+    163     Castellla Forest
+    164     Callisto Gorge
+    165     Bernald Forest
+    166     Stout Forest
+    167     Felix Forest
+    168     Curior Forest
+    169     Theglaia Forest
+    170     Othellos Forest
+    184     TellingDenver Lake
+    185     Mystra Basin
+    186     Mystra Hill
+    187     Luan Basin
+    188     Augilas Gorge
+    189     Bradlely Forest
+    190     Kryston Forest
+    191     Sheriff Forest
+    192     Gaudy Forest
+    193     Harrington Forest
+    194     Candyvault																					135, 65
+    195     Alicia Forest
+    213     Cyoren Forest
+    214     Shaio Forest
+    215     Belpharen Valley
+    216     Salem Valley
+    217     Ashely Forest
+    218     Lavy Basin
+    219     Baskerville Forest
+    220     Berdana Forest
+    221     Realto Plains
+    222     Amorica Forest
+    223     ?
+    239     Urail Valley
+    240     Belteranin Forest
+    241     Grudlin Forest
+    242     Witchwood Forest
+    243     Onix Hill
+    244     Pladino Grove
+    245     Shylphaen Forest
+    246     Colrona Forest
+    247     Taisen Plains
+    248     Bangle Valley
+    249     Mardigras Valley
+    264     Brolly Basin
+    265     Ashton Basin
+    266     Ashmon Hills
+    267     Vargas Forest
+    268     Furanden Forest
+    270     Engrave Path
+    272     Turmeit Desert
+    273     Lombard Plains
+    274     Scorging Plains
+    275     Litrohid Forest
+    276     Harding Forest
+    277     Tincrush Valley
+    292     Bairyn Forest
+    293     Sudden Hill
+    294     Saifield Forest
+    295     Kastled Grove
+    296     Essene																						150, 101
+    297     Evergail Grove
+    298     Cretino Desert
+    299     Aseraphel Desert
+    300     Rudwork Path
+    301     Big Apple Forest
+    302     Odalisque Forest
+    319     Malian Forest
+    320     Trakian Path
+    323     Crossevon Path
+    324     Taquestrim Plateau
+    325     Emperonie Plateau
+    326     Proteron Gorge
+    327     Premusson Path
+    328     Eaglerentin Plain
+    348     Meryle Wood
+    349     Vreily Grove
+    350     Phildevilt Plateau
+    351     Alison Gorge
+    352     Skitchy Gorge
+    353     Titanus Plains
+    354     Celephane Gorge
+    374     Wavin Plains
+    375     Crosby Plains
+    376     Tanline Gorge
+    377     Heather Basin
+    378     Bailey Plains
+    379     Eir																							39, 100
+    380     Darive Plains
+    381     Templar Gorge
+    401     Aristone Plains
+    402     Acidbath Valley
+    403     Chanthery Gorge
+    404     Hooters Plains
+    405     Tolkin Gorge
+    406     Vanderoll Plains
+    407     Marque Basin
+    427     Harquil Plains
+    428     Limus Basin
+    429     Clipper Plains
+    431     Rosetar Basin
+    432     Pharaday Gorge
+    455     Elwood Plains
+    456     Hiroshi Gorge
+    457     Clingon Plains
+    458     Lifeline Basin
+    500     ? (deck of a ship)
+    501     ? (interior - ship)
+    502     ? (interior - ship)
+    503     ? (interior - ship)
+    504     ? (interior - ship)
+    505     ? (interior - pink room with posters)
+    506     ? (interior - maze)
+    507     ? (interior - maze)
+    508     ? (interior - mine)
+    509     ? (interior - cavern)
+    510     ? (interior - cavern)
+    511     ? (interior - cavern)
+    512     ? (interior - cavern)
+    513     ? (interior - cavern)
+    514     ? (interior - sewers)
+    515     
+    516     
+    517     
+    518     
+    519     
+    520     
+    521     
+    522     
+    523     
+    524     
+    525     
+    526     
+    527     
+    528     
+    529     
+    530     
+    531     
+    532     
+    533     
+    534     
+    550     
+    551     
+    552     
+    553     
+    554     
+    555     
+    556     
+    557     
+    700     interior - hotel
+    701     interior - blacksmith?
+    702     interior - some kind of ship
+    703     interior - weapon shop
+    704    	interior - hotel 
+    705     
+    706     
+    707     
+    708     
+    709     
+    710     
+    711     
+    712     
+    713     
+    714     
+    715     
+    716     
+    717     
+    718     
+    719     
+    720     
+    721     
+    722     
+    723     
+    724     
+    725     
+    726     
+    727     
+    728     
+    729     
+    730     
+    731     
+    732     
+    733     
+    734     
+    735     
+    736     
+    737     
+    738     
+    739     
+    740     
+    741     
+    742     
+    743     
+    744     
+    745     
+    746     
+    747     
+    748     
+    749     
+    750     
+    751     
+    752     
+    753     
+    754     
+    755     
+    756     
+    757     
+    758     
+    759     
+    760     
+    761     
+    762     
+    763     
+    764     
+    765     
+    766     
+    767     
+    768     
+    769     
+    770     
+    771     
+    772     
+    773     
+    774     
+    778     
+    779     
+    780     
+    781     
+    782     
+    783     
+    784     
+    785     
+    786     
+    787     
+    788     
+    789     
+    790     
+    791     
+    792     
+    793     
+    794     
+    795     
+    796     
+    797     
+    798     
+    799     
+    801     bar in brynhild
+    809     ring OX
+    810     a kind of stadium
+    811     ring XEN
+    812     
+    813     
+    814     
+    815     
+    816     
+    817     
+    818     
+    819     
+    820     
+    821     
+    822     
+    823     
+    824     
+    825     
+    826     
+    827     
+    828     
+    829     
+    830     
+    831     
+    832     
+    833     
+    834     hell/lava dungeon
+    900     futuristic Dead or Alive arena

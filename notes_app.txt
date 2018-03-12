@@ -3,5 +3,8 @@ cmd params for XenClient.exe
 	param 	desc				example					notes
 	
 	-i		master server ip	-i 127.0.0.1			the master server is used to send the list of game servers to the client
-	-t		session token		-t ajwtuho210vyad35		received from the login server and passed on to the master server
+	-pt 	master server port	-pt 1818				default is 1818
+	-t		session token		-t ajwtuho210vyad35		session token received from the login server and passed on to the master server
 	-u		store ip			-u www.facebook.com		displayed in an html window when the client loads the store
+	-id		?											is accessed by the function 'getMemID'
+	-pw		?

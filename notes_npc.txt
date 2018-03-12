@@ -1,0 +1,84 @@
+When spawning an NPC bytes 12-13 in the packet are the dialog id
+
+Item 42,2 - Quest guide book
+
+	id		npc							location										description
+	
+	1		North Gate Guard			Arcarinas Sq. - Entrance to Guild Plaza			Gives info about fighter and rogue class changes, gives a lvl 18 quest
+	2		West Gate Guard				Arcarinas Sq. - Entrance to Mall Street			Gives info about Mall Street
+	3		East Gate Guard				Arcarinas Sq. - Entrance to Summerhill Street	Gives info about Summerhill Street
+	4		South Gate Guard			Arcarinas Sq. - Entrance to Brynhilld Tri.		Gives info about surrounding area, gives a lvl 12 quest
+	5		Brynhilld Outer Gate Guard	Brynhilld Trisects, Entrance to Arc. Sq.		Gives info about Brynhilld, gives a lvl 11 quest
+	6		Transporter					Brynhilld Transporter							Transporter service, gives lvl 11 quest
+	7 		Bartender					-												Sells milk and juice
+	8		Hotel Manager				-												No text, buttons don't work
+	9		Ore Refiner					-												Info about ore refinement, lvl 29 and 31 quests
+	10		General Store Merchant		-												Sells various potions and ingredients, can turn grapes into juice
+	11		Skill Book Merchant			-												Sells skill books for Squire and Neophite, lvl 17 quest
+	12		Blacksmith					-												Weapon enhancement for lvl 31, job for lvl 11
+	13		Weapon Merchant				Brynhilld Weapon Shop							Sells Fighter, Rogue and Archer weapons (also arrows)
+	14		Armor Merchant				Brynhilld Armor Shop							Sells Fighter, Rogue and Archer armour
+	15		Skill Master				-												Reset stats, lvl 24 quest
+	16 		Guard						Entrance to Northern Forest of Essene			Lvl 18 quest
+	17		Guard						Essene West Gate								Lvl 12 quest
+	18		Guard						Entrance to Evergail Grove						Lvl 22 quest
+	19		Guard						Outside Essene Mage's Guild						Lvl 23 quest
+	20		Guard						Somewhere in Essene								Info about Essene
+	21		Guard						Somewhere in Essene								Info about Essene, lvl 11 quest
+	23		Transporter					Essene Transporter								Transporter service, gives lvl 11 quest
+	24		General Store Merchant		Essene General Item Store						Sells various potions and ingredients, can turn grapes into juice
+	25		Gem Dealer					-												Sells magical gems once player has reached unknown lvl
+	26		Enchanter					-												Gives info on enchanting, lvl 31 quest
+	27		Weaponsmith					Essene Weapon Shop								Sells Apprentice, Acolyte and Disciple weapons (also arrows)
+	28		Armor Merchant				Essene Armor Shop								Sells Apprentice, Acolyte and Disciple armour
+	29		Cafe Manager				Cafe in Essene									Sells Milk and Juice
+	30		Hotel Manager				-												No text, buttons don't work
+	31		Reinmoth					-												Class change, guild info, view class tree, lvl 11 quest
+	32		Reilath						-												Class change, guild info, view class tree, lvl 11 quest
+	34		Reilath						-												Class change, guild info (no class tree or quest)
+	35		Yupine						-												Master of Fighter's Guild, lvl 35 quest
+	36		Betran						Magician's Convene of Essene					Master of Magician's Guild, lvl 35 quest
+	37		Raymond						-												Master of Rogues' Guild, lvl 35 quest
+	38		Mordine						-												Master of Cleric' Guild, lvl 35 quest
+	39		Meshroni					-												Likes clowns (?), lvl 16 quest to get a clown nose
+	40		Zephett						-												Lvl 21 quest to get a wooden doll's nose
+	41		Mario						-												Lvl 21 quest to get a wooden doll's nose
+	42		Yozette						Somewhere in Brynhilld							Cleans for no reason (?), wants 30 condensed raindrops 
+	43		Katrine						-												Likes rabbit's ears
+	44		Skill Book Merchant			-												Sells skill books for Mages ad Clerics, lvl 17 quest
+	45 		Officer Jack				-												Lvl 70 quest for the Pirate Ship of Death	
+	46		Roki						Pirate Ship										Teleport back to Brynhilld or Essene
+	47 		Labyrinth Guide				Labyrinth (?)									Enter the Labyrinth
+	48		Voltess						Somewhere in the Labyrinth						Will send back to Brynhilld or Essene if not a high enough lvl
+	49		Rogues' Guild Guide			-												Enter Rogues' Guild
+	50		Acolytes' Guild Guide		-												Enter Acolytes' Guild
+	51		Veggie Shop Girl			-												Can only sell items to her, lvl 11 quest
+	52 		Veggie Shop Girl			-												Can only sell items to her, lvl 11 quest
+	53		Lotrin						Somewhere in/near Brynhilld						Tells you about the mountainous terrain around Brynhilld
+	54		Mersi						-												Tells you about Officer Jack and the Haunted Ship
+	55		Tekalph						-												Tells you about Officer Jack and the Haunted Ship
+	56		Seiran						-												Tells you about Belteranin Forest									
+	57		Graone						-												Tells you about Belteranin Forest									
+	58		Fighters' Guild Guide		-												Enter Fighters' Guild
+	59		Pateru						Somewhere in/near Brynhilld						Tells you about Belteranin Forest
+	60		Meshione					-												Likes clowns (?), lvl 16 quest to get a clown nose
+	61		Guard						Entrance to Cobalt Cave							Tells you that The Cobalt Cave is off limits
+	62		Jikey						-												Wandering merchant, can only sell items to him, lvl 20 quest
+	63		Jaypee						-												Wandering merchant, can only sell items to him, lvl 31 quest
+	64		Guild Office Decorator		Office of Allied Guilds							Guild tasks, such as creating a guild (lvl 66)
+	65		Agent of Guild				Office of Allied Guilds							Helps with liaisons with guild masters
+	66		Guild Office Guide			Office of Allied Guilds	(2nd floor)				Tells you about the guild office
+	67		Guard						-												Tells you you cannot proceed further (1)
+	68		Guard						Candy Vault										Tells you about Candy Vault
+	69		Guard						Candy Vault										Tells you about Candy Vault
+	70		Guard						-												Tells you you cannot proceed further (2)
+	71		Guild Office Guide			Office of Allied Guilds	(1nd floor)				Tells you about the guild office
+	72		Mushroom Collector			-												Wants you to collect mushrooms for him
+	73		Mushroom Collector			-												Wants you to collect mushrooms for him
+	74		Guard						Entrance to Mythril Mine						Tells you about Mythril Mine
+	75 		Crazy Old Manager			-												Wants you to play with him...
+	76		Alchemist					-												Tells you about alchemy, lvl 26 quest
+	77		Guard						Entrance to Cave of Kobolts						Tells you about Cave of Cobolts
+	78		Guard						-												Moans in pain
+	79		Remasto						Candy Vault										Tells you about Candy Vault, lvl 31 quest
+	80		General Store Merchant		-												Sells various potions and ingredients, can turn grapes into juice

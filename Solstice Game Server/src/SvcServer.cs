@@ -13,7 +13,6 @@ namespace SolsticeGameServer {
     public class SvcServer {
 
         public static ManualResetEvent ResetEvent = new ManualResetEvent(false);
-        private static List<ClientState> clientList = new List<ClientState>();
 
         private static int connectionCount;
 
@@ -56,8 +55,7 @@ namespace SolsticeGameServer {
             Console.WriteLine("[SVC] Accepted new connection from {0} [id={1}]", Util.GetSocketAddress(handler), connectionCount);
 
             // Create the state object.  
-            ClientState state = new ClientState(connectionCount, handler, new AsyncCallback(ReceiveCallback));
-            clientList.Add(state);
+            ClientState state = new ClientState(connectionCount, handler, new AsyncCallback(ReceiveCallback), false);
 
             connectionCount++;
         }

@@ -8,43 +8,371 @@ Sending player data to the client (packet length 183):
 	byte 0: 181 	(length)
 	byte 1: 0
 	byte 2: 192 	(id)
-	byte 3-7: ?
+	byte 3-7: 0
 	byte 8: 0
 	byte 9-183: 	174 bytes of player data
-		15: level
+		9:		class
+					0 = Xenian
+					1 = Squire
+					2 = Apprentice
+					3 = Neophyte
+					4 = Acolyte
+					5 = Knight
+					6 = Mage
+					7 = Archer
+					8 = Templar
+					9 = Warrior
+					10 = Wizard
+					11 = Assassin
+					12 = Priest
+					13 = Warlord
+					14 = Archmage
+					15 = Shadow Master
+					16 = Paladin
+					17 = Rogue
+					18 = Cleric
+					19 = Scout
+					20 = Disciple
+					21 = Ranger
+					22 = Holy Avenger
+		11-12:	hp current
+		13-14:	mp current
+		15: 	level
+		18:		available skill points
+		20:		POW
+		21:		INT
+		22:		STA
+		23:		AGI
+		24:		MEN
+		25:		WIS
+		26-29:	win	
+		30-33:	lost
+		34:		unknown 'point' next to win/loss
+		44-45:		item in 'mslot'					
+		46-53: 		item in 'wear' background		item slot 0
+		54-61: 		item in 'head' background		item slot 1
+		62-69: 		item in 'eye'					item slot 2
+		70-77: 		item in 'face'					item slot 3
+		78-85: 		item in 'arm l'					item slot 4
+		86-93:		item in 'arm r'					item slot 5
+		94-101:		item in 'back'					item slot 6
+		102-109:	item in 'glove'					item slot 7
+		110-117: 	item in 'shoes'					item slot 8
+		118-125:	item in 'acc1'					item slot 9
+		126-133:	item in 'acc2'					item slot 10
+		134-141:	item in 'acc3'					item slot 11
+		142-149:	item in 'wear'					
+		150-157:	item in 'head'					
 		
+max hp/mp/wt are calculated client-side based on level/class/stats etc
+wt current is calculated from items in inventory
+first 2 bytes of item are the item id, last 3 are the expiry time (0 for no expiry)
+
+An item value is 8 bytes long
+	[0,1] 	item id
+	[2,3]	amount
+	[4]		???
+	[5-7]	expiry time
 	
-
-
+Send inventory to player
+	[0,1] = packet length (7 + number of items * 8)
+	[2]	= 192
+	[3-7] = 0
+	[8]	= inventory id (49 = spend, 50 = gear, 51 = other)
+	[9]	= number of items
+	[10+] = item data (see above)
+		
+Send map data:
+	[0] = 15
+	[1] = 0
+	[2] = 176
+	[3-7] = 0
+	[8] = 17
+	[9-12] = map id
+	[13,14] = pos x
+	[15,16] = pos z
+	
 Packet options:
 
-[2] = 191	[0] = 13		? (fades to black)
+[2] = 191	[0] = 13		? (possibly resets game)
 [2] = 192					stuff about items/inventory/stats
-	[8] = 0					set player stats
-[2] = 186					?
+	[8] = 0						set player stats (see above)
+	[8] = 49					set spend inventory
+	[8] = 50					set gear inventory
+	[8] = 51					set other inventory
+	[8] = 52					picked up item
+	[8] = 53,54,55,74			?
+	[8] = 75					you have purchased (item)
+	[8] = 77					you have purchased the listed items
+	[8] = 58,59,60,63			?
+	[8] = 5,7					set health
+	[8] = 6,8					set mana
+	[8] = 26					set level
+	[8] = 27					?
+	[8] = 33					set POW
+	[8] = 34					set INT
+	[8] = 35					set STA
+	[8] = 36					set AGI
+	[8] = 37					set MEN
+	[8] = 38					set WIS
+	[8] = 47					set skill points
+	[8] = 1						set kron (8 byte int)
+	[8] = 9						?
+	[8] = 2						set menu options
+		[9] is a byte with the structure of { 0, 0, !allowInspection, 0, !allowPartyRequest, 0, !req1v1Trade, !allowWhispering}
+	[8] = 3						set job
+	[8] = 4						set hair
+	[8] = 96-107				set equipped items
+	[8] = 224-225				set cosmetic items
+	[8] = 144					set win score
+	[8] = 145					set lost score
+	[8] = 146					set point score
+	[8] = 56,57,76				?
+	[8] = 64					display buffs
+	[8] = 65,66,67,68			? (buff stuff)
+	[8] = 80					Set skill list
+	[8] = 81					? (skill list stuff)
+	[8] = 82					set skill points
+	[8] = 110					equip mslot item
+	[8] = 111					tell player if they succeeded in smelting ([9] = 0 fail, [9] = 1 success)
+	[8] = 112					? (map pos list stuff)
+	[8] = 113					client shows 'Saved current position' 
+	[8] = 115,116,117			? (map pos list stuff)
+	[8] = 128					open item charge form
+	[8] = 129					set item charge form gold
+	[8] = 130,131				? (item charge stuff, probably adding and removing items)
+	[8] = 160					set quest list
+	[8] = 161					?
+	[8] = 162					remove quest
+	[8] = 163,164,165			? (quest stuff, probably item rewards)
+	[8] = 170					?
+	[8] = 171					show item notification
+	[8] = 176					? (probably summon pet)
+	[8] = 177					recall pet
+	[8] = 178					?
+	[8] = 179					? (probably summon pet)
+	[8] = 180					? (takes string)
+	
+[2] = 186					show chat messages
+	[8] = 160					just message
+		[9] = length
+		[10+] = message
+	[8] = 31					user : message
+		[9] = username length
+		[10] = message length
+		[11-n] = username
+		[n+] = message
+	[8] = 28					notification in top-centre of screen
+		[9] = length
+		[10+] = message
+	[8] = 27					system message (top left below stat bars)
+		[9] = length
+		[10+] = message
+	[8] = 26					notice (top-centre and in chat box)
+		[9] = length
+		[10+] = message
+	[8] = 17					?
+	[8] = 18					?
+	[8] = 20					party message
+		[9] = name length
+		[10] = message length
+		[10-n] = name
+		[n+] = message
+	[8] = 21					guild message (same structure as party)
+	
 [2] = 193					trading stuff
-[2] = 194
-[2] = 195
+[2] = 194					party stuff
+[2] = 195					send server messages
+	[8] = 1						"Number of people connected to the game server"
+	[8] = 2						"Total number of people connected to the server"
+	[8] = 5 					"NPC added"
+	[8] = 3						"DECEXPRATE"
+	[8] = 4						"MAPEXPRATE" "SVREXPRATE"
+	[8] = 6						"Current map users"
+	[8] = 16					?
+	[8] = 47					?
+	[8] = 32					opens char info form
+	[8] = 33					set char info 'S' item list
+	[8] = 34					set char info 'M' item list
+	[8] = 35					set char info 'O' item list
+	[8] = 36					set char info 'C' item list
 [2] = 196					guild stuff
+[2] = 197					? (something with camera maybe)
 [2] = 198	[8,9] = 17		starts pin game 		{ 8 0 198 0 0 0 0 0 17 17 }
 
-[2] = 178
-[2] = 179
-[2] = 180
-[2] = 181
+[2] = 181					player event stuff
+	[9] = object id (1 = player, 2 = monster etc)
+	[10] = player id
 
-[2] = 177					?
+	[8] = 49					?
+	[8] = 16					show effect (see notes_effects.txt)
+		[12] = visual effect id
+		[14] = sound effect id
+	[8] = 17					?
+	[8] = 18					set direction
+		[12] = direction
+	[8] = 33,34,35				? (takes value of variable length)
+	[8] = 20					?
+	[8] = 21					display job change ("player just changed job to squire" and show wings animation)
+		[12] = class id
+	[8] = 22					show emoticon
+		[12] = emote id
+	[8] = 23					? (the first time this is sent, the client responds with a packet of id 196)
+	[8]	= 7						show level up anim
+		[0] = 11
+		[12] = level
+	[8] = 24					set appearance
+	[8] = 25,26,27,28,29		?
+	[8] = 194					use skill
+		[12] = stance
+		[13] = skill id
+	[8] = 176					set stance
+		[12] = stance
+		[13] = direction
+	[8] = 177					attack target
+	[8] = 178					show number above player (red light)
+		[12] = value
+	[8] = 179					show number above player (blue light)
+		[12] = value
+	[8] = 180					? (takes 1 byte)
+	[8] = 192					use skill (skill id not same as others? possibly self-applied skills)
+		[12] = stance
+		[13] = direction
+		[14] = skill id
+	[8] = 193					? (takes a skill id and does a check on the skill, probably to check if it's a certain type)
+	[8] = 255					kill player
+	[8] = 254					? (something using the pause menu)
+	[8] = other					skill stuff, to do later
+
+[2] = 180					delete object
+	[8] = object type
+	[9] = play warp anim
+	[10] = object id
+
+[2] = 179					set pos
+[2] = 178					?
+
+[2] = 177					Spawn object
+	[8] = 1						player
+		[9] = play spawn anim
+		[10] = object id
+		[11] = ?
+		[12] = gender/class/bdtype
+				[12] & 128 = gender	 ->  i.e. first bit is gender, the other bits determine the class: a male with class 20 would be 10010100
+				[12] & 127 = class
+				[12] = bdtype (?)
+		[13] = WepType (?)
+		[14] = outfit
+		[15] = hair
+		[16] = head equipment
+		[17] = face equipment
+		[18] = arm left
+		[19] = arm right
+		[20] = eye equipment
+		[21] = back equipment
+		[22] = ?
+		[23] = move speed
+		[24] = direction (0, 1, 2, 3)
+		[25] = stance
+			0 = standing
+			1 = sitting
+			2 = combat
+			4 = dead
+		[26] = ?
+		[27,28] = pos x
+		[29,30] = pos z
+		[31-35] = guild info
+		[36-38] = ?
+		[39] = name length
+		[40] = ? (probably memId length)
+		[41-n] = name
+		[n+] = ? (probably memId)
+	[8] = 2						monster
+	[8] = 7						pet
+	[8] = 3						npc
+	[8] = 4						item
+	[8] = 5						deal
+	[8] = 6						buff
 
 [2] = 176
-	[8] = 17 & [0] = 15		?
-	[8] = 19 & [0] = 7		loads UI
-	[8] = 18 & [0] = 7		enabled map loading
-	[8] = 20 & [0] = 27		closes socket
+	[8] = 17 & [0] = 15		sets map
+	[8] = 19 & [0] = 7		loads map
+	[8] = 18 & [0] = 7		?
+	[8] = 20 & [0] = 27		closes window
 	[8] = 21 & [0] = 7		?
 	[8] = 22 & [0] = 7		loads browser window
 	[8] = 48				?
 	[8] = 24				?
 	
-[2] = 2						closing socket stuff
-[2] = 1						
-[2] = 0						closes socket
+[2] = 3						quits game			(behavior is different for "exit game" and "return to char select" even if packet is the same)
+	[8] = 0						exits cleanly
+	[8] = 1						exits cleanly
+	[8] = 2						leaves server but doesn't exit game
+	[8] = 4095	(255, 15)		exits cleanly
+
+[2] = 2						shows error message - all are system messages (appears below stat bars) except those marked (notice)
+	[8] = 1						Not authorized										
+	[8] = 5						Cannot attack										
+	[8] = 6						Cannot pick up item									
+	[8] = 7						Cannot throw away item								
+	[8] = 8						Cannot move											
+	[8] = 9						Cannot warp											
+	[8] = 10					Cannot sit							
+	[8] = 15					Cannot whisper to {0}				gets {0} from chatting form
+	[8] = 16					Cannot purchase this item				
+	[8] = 17					Cannot sell item							
+	[8] = 18					Cannot use the item						
+	[8] = 19					Item cannot be equipped						
+	[8] = 20					Cannot smelt								
+	[8] = 21					Cannot open storage							
+	[8] = 22					Cannot store items in the storage			
+	[8] = 23					Cannot use item from the storage	
+	[8] = 24					Cannot store money in the storage			
+	[8] = 25					Cannot use money from the storage			
+	[8] = 26					Failed to create the sell room				
+	[8] = 27					Failed to delete the sell room					
+	[8] = 28					Request on sell room information is denied		
+	[8] = 29					Sell room purchase is denied					
+	[8] = 36					Denied to use skill								
+	[8] = 27					The opponent did not allow you to join the party	
+	[8] = 38					Cannot create party							
+	[8] = 39					Cannot withdraw from the party				
+	[8] = 40					Cannot delete party member					
+	[8] = 41					Cannot change the party chief				
+	[8] = 43					Cannot join the party						
+	[8] = 44					Cannot change the party option				
+	[8] = 49					Cannot log off during, after the battle and after moving map		
+	[8] = 50					Failed to log off								
+	[8] = 51					Cannot change the magazine item					
+	[8] = 52					Failed to move to item shop							(notice)
+	[8] = 53					Cannot access the shop during battle				
+	[8] = 54					Failed to leave the item shop						(notice)
+	[8] = 55					Failed to purchase package item						(notice)
+	[8] = 56					Failed to delete item from the inventory			(notice)
+	[8] = 57					Cannot send gift									(notice)
+	[8] = 58					Failed to receive a gift							(notice)
+	[8] = 59					Cannot receive more gifts. Inventory is full		(notice)
+	[8] = 60					??? (conditional)
+	[8] = 61					??? (conditional)
+	[8] = 62					Quest delete is denied
+	[8] = 64					??? (conditional)
+	[8] = 81					??? (conditional)
+	[8] = 82					Don't show cart window
+	[8] = 83					Player inspection denied by target
+	
+[2] = 1						exit game
+	[8] = 1						Packet length error													(ok -> closes window)
+	[8] = 2						Sent wrong packet													(ok -> closes window)
+	[8] = 3						Not authorized														(ok -> closes window)
+	[8] = 4						Trying to access a map that does not exist 							(ok -> closes window)
+	[8] = 5						Previous connection detected. Would you like to disconnect? 		(y/n)	y takes you back to server select, but has some problems with sending token
+	[8] = 6						Failed to log-in													(ok -> closes window)
+	[8] = 7						Cannot verify at the moment, please try again later					(ok -> closes window)
+	[8] = 8						You cannot connect with this version of the client					(ok -> closes window)
+	[8] = 9						Logged in from another computer so closing the current connection 	(ok -> closes window)
+	[8] = 10					You are already logged in											(ok -> closes window)
+	[8] = 11					Send packet over the regulation										(ok -> closes window)
+	[8] = 12					Failed to log-in													(ok -> closes window)
+	[8] = 65534 (255,254)		Error occurred in server											(ok -> closes window)
+
+

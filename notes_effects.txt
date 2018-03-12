@@ -1,0 +1,60 @@
+Sending the packet { 14 0 181 0 0 0 0 0 16 1 8 0 3 0 4 0 } will show an effect on object with id 8 (visual id = 3, sound id = 4)
+
+visual effects
+	
+	id			description
+	
+	0			large, bright, white explosion
+	1			pillar of orange light, I think played when a player/monster is spawned
+	2			wings, played when a player levels up
+	3			large expanding yellow circles 
+	4			blue spinning magical sphere, probably from defense spell
+	5			two yellow fists fly down to punch the player in the head
+	6			dense green cloud, looks poisonous
+	7			pale yellow expanding circles, similar to 3 but smaller
+	8			large bright green explosion with wide slashes
+	9			'increase atk' symbol
+	10-15		? no visible effect 
+	16			large spinning blue triangles fall towards player, probably some kind of buff
+	17			red clouds of mist, red sparks and swirling red lines
+	18			fast blue spinning blades of light some out of the player, swirl around a bit and return
+	19			large, bright white-blue explosion
+	20			yellow beams are sucked into the player with a bright glow
+	21			fast, brief blue beam falling from above player
+	22			pillar of lightning coming from above
+	23			fast, brief yellow beam falling from above player, similar to 21
+	24			'atk speed up' symbol
+	25			swirling rocks appear around the player for a few seconds
+	26-31		? no visible effect
+	32			large blue compass appears with spinning blue sparks
+	33			blue spikes of ice appear
+	34			huge rock falls to crush player
+	35			large holy crosses appear on the ground along with a beam of light
+	36			large spinning red and orange triangle symbols appear for a few seconds
+	37			large spinning blue star symbols appear for a few seconds
+	38			large spinning green key symbols appear for a few seconds
+	39			large spinning yellow cross(?) symbols
+	40			large spinning pink and yellow crystal/flower symbols
+	41			pillar of orange-red light
+	42-47		? no visible effect
+	48			large cross sword thing appears before player
+	49			fast beams of blue light coalesce at player to form bright white light
+	50			large yellow hand of light falls upon player, spinning
+	
+	51+			there are more but I'll look at them later
+		
+sound effects
+	
+	id 			description
+	
+	0			no sound effect
+	1			level up sound?
+	2			miss 1
+	3			punch 1
+	4 			punch 2
+	5			punch 2
+	6			miss 2
+	7			hit 
+	8			miss 3
+	
+	9+ 			there are more but I'll look at them later

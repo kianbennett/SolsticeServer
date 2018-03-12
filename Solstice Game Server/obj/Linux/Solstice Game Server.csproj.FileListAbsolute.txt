@@ -1,0 +1,5 @@
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\aws-build\game-server\SolsticeServer.exe.config
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\aws-build\game-server\SolsticeServer.exe
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\Solstice Game Server\obj\Linux\Solstice Game Server.csprojResolveAssemblyReference.cache
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\Solstice Game Server\obj\Linux\Solstice Game Server.csproj.CoreCompileInputs.cache
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\Solstice Game Server\obj\Linux\SolsticeServer.exe

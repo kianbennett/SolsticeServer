@@ -1,0 +1,93 @@
+Upon connecting to the chat server the client will send the character's name
+	e.g. { 14 0 176 12 85 103 32 84 104 101 32 66 114 97 118 101 }
+	
+Server response:
+
+	[2] = 177				? (large packet, seems to set stuff in buddy list, perhaps sets all info in one packet)
+	[2] = 176				? (only takes 1 byte)
+
+	[2] = 179				Same as 180 but with "buddy has logged-in notification"
+	
+	[2] = 180				Set buddy status
+		[7] = status
+		[8] = name length
+		[9] = name
+		
+	[2] = 181				Block/unblock buddy
+
+	[2] = 182				Set status
+		[3] = 0					Offline
+		[3] = 1					Online
+		[3] = 2					Busy
+		[3] = 3					Leveling Up
+		[3] = 4					Out to Lunch
+		[3] = 5					Sleeping
+		[3] = 6					Away
+		
+	[2] = 183				PLAYER asked to be on your buddy list - Message: MESSAGE
+		[3] = PLAYER length
+		[4] = MESSAGE length
+		[5-n] = PLAYER
+		[n+] = MESSAGE
+
+	[2] = 184
+		[3] = 0				PLAYER canceled the request to be on your buddy list
+		[3] = 1				PLAYER added to your buddy list
+		[4] = PLAYER length
+		[5+] = PLAYER
+	
+	[2] = 185				Add PLAYER to buddy list
+		[6] = ?					When this is set to 1, the message icon flashes next to it when closing a message
+		[7] = group id (?)
+		[8] = status
+		[10] = PLAYER length
+		[11+] = PLAYER
+	
+	[2] = 187				Remove buddy
+		[3] = name length
+		[4+] = name
+	
+	[2] = 190				Receive message from player ("PLAYER's message has arrived - MESSAGE")
+		[3] = PLAYER length
+		[4] = MESSAGE length
+		
+	[2] = 191				Create buddy group
+		[3] = group id
+		[4] = name length
+		[5+] = name
+		
+	[2] = 192				Delete buddy group
+		[3] = group id
+		
+	[2] = 193				Rename buddy group
+		[3] = group id
+		[4] = name length
+		[5+] = name
+		
+	[2] = 194				Add buddy to group
+		
+	[2] = 3					Disconnect from chat server (takes 1 unknown byte)
+		
+	[2] = 2					Show notice
+		[3] = 3					Failed to change status
+		[3] = 4					Failed to add a buddy
+		[3] = 5					Failed to find a buddy
+		[3] = 6					Cannot add more buddies to the list
+		[3] = 7					Cannot register because it is registered as a buddy already. Try again after deleting."
+		[3] = 8					Not logged on
+		[3] = 9					Failed to delete buddy
+		[3] = 10				Failed to block (unblock) buddy
+		[3] = 11				This buddy does not exist
+		[3] = 12				Failed to send chatting message to a buddy
+		[3] = 13				Error occurred in length of chatting message
+		[3] = 14				Error occurred in length of buddy's ID
+		[3] = 15				Error occurred in length of group's title
+		[3] = 16				Same group name is already in use
+		[3] = 17				Failed to add a group
+		[3] = 18				Cannot add more groups
+		[3] = 19				This group name is already in use
+		[3] = 20				This group does not exist
+		[3] = 21				Wrong group ID
+		[3] = 22				Failed to change the title of the group
+		[3] = 23				Group is not empty
+	

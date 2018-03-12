@@ -36,12 +36,11 @@ namespace SolsticeMasterServer {
                 ClientSocket.BeginReceive(Buffer, 0, BufferSize, 0, new AsyncCallback(Program.ReceiveCallback), this);
                 ResetEvent.WaitOne();
             }
+            Console.WriteLine("Closed connection for {0} [id={1}]", Util.GetSocketAddress(ClientSocket), Id);
         }
 
         public void Close() {
             active = false;
-
-            Console.WriteLine("Closed connection for {0} [id={1}]", Util.GetSocketAddress(ClientSocket), Id);
         }
     }
 }
