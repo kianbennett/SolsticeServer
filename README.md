@@ -19,6 +19,8 @@
 - [ ] Guilds
 - [ ] Monster spawns
 
+(See [notes_dev.txt](notes_dev.txt) for more detailed to-do list)
+
 ## Live Servers
 
 | Location	| IP				| Port		|

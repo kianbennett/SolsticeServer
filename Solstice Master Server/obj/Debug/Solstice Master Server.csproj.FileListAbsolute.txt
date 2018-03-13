@@ -14,3 +14,5 @@ C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\Solstice Master Serv
 C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\Solstice Master Server\obj\Debug\MasterServer.pdb
 C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\build\MasterServer.exe
 C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\build\MasterServer.pdb
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\build-win\MasterServer.exe
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\build-win\MasterServer.pdb

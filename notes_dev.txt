@@ -1,0 +1,26 @@
+TODO: (in order of importance)
+
+- Combat -> move player within attack dist, show animation/spell effect, display damage, change hp of monster
+- Monster spawn areas
+- Get buddy groups working with database
+- PMs and chat bubbles
+- Equipping items changes player appearance
+- Accepting quests from npcs
+- Server-side quest tracker for completing quests
+- Investigate how to display quest completion on client
+- Document rest of npc sprites and dialogs
+- Populate rest of Brynhild
+- Investigate guilds
+- Investigate parties
+- Store page pointing to github page saying "coming soon"
+
+
+Before releasing to the public
+
+- Brynhild outdoor navigable with a few npcs here and there
+- Accept quests from npcs to stop the game crashing
+- Combat & monster spawn area outside Brynhild
+- Buddy list & chat complete
+- Player appearance complete
+- Come up with a name
+- Better exception handling

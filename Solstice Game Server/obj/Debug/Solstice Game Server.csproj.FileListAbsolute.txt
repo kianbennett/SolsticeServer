@@ -12,4 +12,7 @@ C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\build\game-server\So
 C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\build\game-server\SolsticeServer.pdb
 C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\Solstice Game Server\obj\Debug\SolsticeServer.exe
 C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\Solstice Game Server\obj\Debug\SolsticeServer.pdb
-C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\build\game-server\SolsticeServer.exe.config
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\build-win\game-server\SolsticeServer.exe
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\build-win\game-server\SolsticeServer.pdb
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\build-win\game-server\x86\sqlite3.dll
+C:\Users\Kian\Documents\Reverse Engineering\Solstice Server\build-win\game-server\x64\sqlite3.dll

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Weavers>
-  <!--<Costura>
+<Weavers> 
+  <!-- To build for linux, comment out the <costura> block -->
+  <Costura>
     <Unmanaged32Assemblies>
-      SQLite.Interop
+      sqlite3
     </Unmanaged32Assemblies>
     <Unmanaged64Assemblies>
-      SQLite.Interop
+      sqlite3
     </Unmanaged64Assemblies>
-  </Costura>-->
+  </Costura>
 </Weavers>
